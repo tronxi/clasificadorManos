@@ -2,13 +2,14 @@ import procesarImagen as pi
 
 def reglas(hu):
     #print(hu)
-    if hu[1] <= 0.186295:
+    if hu[4] <= 0.000019:
         return False
     else:
-        if hu[2] <= 0.013092:
+        if hu[2] <= 0.026982:
             return True
         else:
             return False
+        
 
 def imprimirConsola(imagen, resultado):
     print(imagen + " " + str(resultado))
@@ -24,7 +25,8 @@ def clasificarCarpeta(carpeta):
         array.append(0)
         for h in hu:
             array.append(h[0])
-        #imprimirConsola(test[i], reglas(array))
-        imprimirGrafico(im, reglas(array))
+        imprimirConsola(test[i], reglas(array))
+        #print(array)
+        #imprimirGrafico(im, reglas(array))
 
-clasificarCarpeta("test")
+clasificarCarpeta("noManos")
